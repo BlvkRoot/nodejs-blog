@@ -7,8 +7,6 @@ const PORT = process.env.PORT || 8000;
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
-    res.send({message: "Ninja"});
-});
+require('./src/controllers/index')(app);
 
-app.listen(PORT, () => console.log(`Server running at PORT ${PORT}`));
+app.listen(PORT, () => console.log(`Server running at PORT ${PORT}`)); 
